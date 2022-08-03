@@ -20,7 +20,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = "")
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
 
@@ -29,7 +29,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = "hola")
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
 
@@ -38,7 +38,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -46,7 +46,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = "fdaA2ds")
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -54,7 +54,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = "holaholahola")
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
     @Test
@@ -62,7 +62,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -70,7 +70,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -78,7 +78,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = "HOLAHOLAHOLA")
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
     @Test
@@ -86,7 +86,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -94,7 +94,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = WRONG_STRING)
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
     @Test
@@ -102,7 +102,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -110,7 +110,7 @@ class SecondRuleTest {
 
         val result = sut.validate(input = WRONG_STRING)
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
 

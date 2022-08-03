@@ -17,7 +17,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = "")
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
 
@@ -26,7 +26,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = "hola")
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
 
@@ -35,7 +35,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -43,7 +43,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = "holaholahola")
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
     @Test
@@ -51,7 +51,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -59,7 +59,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -67,7 +67,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = "HOLAHOLAHOLA")
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
     @Test
@@ -75,7 +75,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -83,7 +83,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = WRONG_STRING)
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
     @Test
@@ -91,7 +91,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = VALID_STRING)
 
-        Assert.assertEquals(true, result)
+        Assert.assertEquals(true, result.isValid)
     }
 
     @Test
@@ -99,7 +99,7 @@ class PasswordValidatorTest {
 
         val result = sut.validate(input = WRONG_STRING)
 
-        Assert.assertEquals(false, result)
+        Assert.assertEquals(false, result.isValid)
     }
 
 
