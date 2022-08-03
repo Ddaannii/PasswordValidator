@@ -16,3 +16,4 @@
 
 # IntelliJ
 *.iml
+/build/
