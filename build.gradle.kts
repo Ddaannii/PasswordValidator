@@ -1,12 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.21"
+    kotlin("jvm") version "1.7.10"
     application
 }
 
-group = "me.dani"
-version = "1.0-SNAPSHOT"
+group = "me.kata.password"
+version = "0.0.1"
 
 repositories {
     mavenCentral()

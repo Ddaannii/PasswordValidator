@@ -3,11 +3,8 @@ package com.kata.password
 class PasswordValidator {
 
     fun validate(input: String): Boolean {
-        return hasMinimumLength(input) &&
-                hasAnUpperCase(input) &&
-                hasALowerCase(input) &&
-                hasANumber(input) &&
-                hasAnUnderscore(input)
+        return hasMinimumLength(input) && hasAnUpperCase(input) && hasALowerCase(input) && hasANumber(input)
+                && hasAnUnderscore(input)
     }
 
     private fun hasMinimumLength(input: String) = input.length >= MINIMUM_LENGTH
