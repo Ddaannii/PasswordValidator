@@ -1,0 +1,18 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+
+# Gradle files
+.gradle/
+
+# OSX files
+.DS_Store
+
+# User-specific configurations
+.idea/*
+!.idea/dictionaries
+.idea/dictionaries/*
+!.idea/dictionaries/ucc.xml
+
+# IntelliJ
+*.iml
