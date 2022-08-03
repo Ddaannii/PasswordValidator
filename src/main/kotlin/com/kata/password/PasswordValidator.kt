@@ -1,24 +1,13 @@
 package com.kata.password
 
-class PasswordValidator {
+import com.kata.password.model.Password
+import com.kata.password.rules.BasicRule
+import com.kata.password.rules.Rule
+
+class PasswordValidator(private val rule: Rule = BasicRule.buildRule()) {
 
     fun validate(input: String): Boolean {
-        return hasMinimumLength(input) && hasAnUpperCase(input) && hasALowerCase(input) && hasANumber(input)
-                && hasAnUnderscore(input)
-    }
-
-    private fun hasMinimumLength(input: String) = input.length >= MINIMUM_LENGTH
-
-    private fun hasALowerCase(input: String) = input.toList().any { it.isLowerCase() }
-
-    private fun hasAnUpperCase(input: String) = input.toList().any { it.isUpperCase() }
-
-    private fun hasANumber(input: String) = input.toList().any { it.isDigit() }
-
-    private fun hasAnUnderscore(input: String) = input.toList().any { it == '_' }
-
-    companion object {
-        private const val MINIMUM_LENGTH = 8
+        return rule.validate(Password(input))
     }
 
 }

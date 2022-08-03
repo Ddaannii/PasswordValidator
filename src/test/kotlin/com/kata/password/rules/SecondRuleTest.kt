@@ -1,15 +1,18 @@
-package com.kata.password
+package com.kata.password.rules
 
+import com.kata.password.PasswordValidator
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
-class PasswordValidatorTest {
+class SecondRuleTest {
     lateinit var sut: PasswordValidator
+
 
     @Before
     fun setup() {
-        sut = PasswordValidator()
+        val rule = SecondRule()
+        sut = PasswordValidator(rule)
     }
 
     @Test
@@ -22,7 +25,7 @@ class PasswordValidatorTest {
 
 
     @Test
-    fun `password validator, with an input of less than 8 characters, should return false`() {
+    fun `password validator, with an input of less than 5 characters, should return false`() {
 
         val result = sut.validate(input = "hola")
 
@@ -31,9 +34,17 @@ class PasswordValidatorTest {
 
 
     @Test
-    fun `password validator, with an input of more than 8 characters, should return true`() {
+    fun `password validator, with an input 6 characters, should return true`() {
 
         val result = sut.validate(input = VALID_STRING)
+
+        Assert.assertEquals(true, result)
+    }
+
+    @Test
+    fun `password validator, with an input 7 characters, should return true`() {
+
+        val result = sut.validate(input = "fdaA2ds")
 
         Assert.assertEquals(true, result)
     }
@@ -104,7 +115,7 @@ class PasswordValidatorTest {
 
 
     companion object {
-        const val VALID_STRING = "HOLAhola1234Hola_"
+        const val VALID_STRING = "Hola12"
         const val WRONG_STRING = "HOLAHOLAHOLA"
     }
 

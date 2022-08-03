@@ -1,15 +1,18 @@
-package com.kata.password
+package com.kata.password.rules
 
+import com.kata.password.PasswordValidator
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
-class PasswordValidatorTest {
+class ThirdRuleTest {
     lateinit var sut: PasswordValidator
+
 
     @Before
     fun setup() {
-        sut = PasswordValidator()
+        val rule = ThirdRule()
+        sut = PasswordValidator(rule)
     }
 
     @Test
@@ -22,18 +25,26 @@ class PasswordValidatorTest {
 
 
     @Test
-    fun `password validator, with an input of less than 8 characters, should return false`() {
+    fun `password validator, with an input of less than 15 characters, should return false`() {
 
-        val result = sut.validate(input = "hola")
+        val result = sut.validate(input = "Hola12_asdfasd")
 
         Assert.assertEquals(false, result)
     }
 
 
     @Test
-    fun `password validator, with an input of more than 8 characters, should return true`() {
+    fun `password validator, with an input 16 characters, should return true`() {
 
         val result = sut.validate(input = VALID_STRING)
+
+        Assert.assertEquals(true, result)
+    }
+
+    @Test
+    fun `password validator, with an input 17 characters, should return true`() {
+
+        val result = sut.validate(input = "Hola12_asdfasdfas")
 
         Assert.assertEquals(true, result)
     }
@@ -86,25 +97,9 @@ class PasswordValidatorTest {
         Assert.assertEquals(false, result)
     }
 
-    @Test
-    fun `password validator, with at least one underscore, should return true`() {
-
-        val result = sut.validate(input = VALID_STRING)
-
-        Assert.assertEquals(true, result)
-    }
-
-    @Test
-    fun `password validator, with a string with no underscores, should return false`() {
-
-        val result = sut.validate(input = WRONG_STRING)
-
-        Assert.assertEquals(false, result)
-    }
-
 
     companion object {
-        const val VALID_STRING = "HOLAhola1234Hola_"
+        const val VALID_STRING = "Hola12_asdfasdfa"
         const val WRONG_STRING = "HOLAHOLAHOLA"
     }
 
