@@ -8,4 +8,5 @@ open class Rule(private val requirements: Requirements) {
 
     fun validate(input: Password): Map<Pass, Boolean> = requirements.arguments.associateWith { it.check(input) }
 
+
 }
