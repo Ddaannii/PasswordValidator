@@ -2,6 +2,6 @@ package com.kata.password.pass
 
 import com.kata.password.model.Password
 
-interface Pass {
-    fun check(password: Password): Boolean
+interface Requirement {
+    fun validate(password: Password): Boolean
 }

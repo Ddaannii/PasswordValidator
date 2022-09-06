@@ -1,21 +1,19 @@
 package com.kata.password.rules
 
-import com.kata.password.pass.Requirements
+import com.kata.password.pass.PasswordContract
 
 class BasicRule : Rule(arguments) {
 
-    companion object Factory : RuleFactory() {
+    companion object {
         private const val MINIMUM_LENGTH = 8
 
-        private val arguments = Requirements.Builder()
+        private val arguments = PasswordContract.Builder()
             .setMinimumLimit(MINIMUM_LENGTH)
             .addCapitalLetterRequirement()
             .addLowerScoreLetterRequirement()
             .addNumberRequirement()
             .addUnderScoreRequirement()
             .build()
-
-        override fun buildRule(): Rule = BasicRule()
     }
 
 
